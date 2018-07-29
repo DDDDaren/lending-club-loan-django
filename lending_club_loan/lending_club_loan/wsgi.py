@@ -1,5 +1,5 @@
 """
-WSGI config for wisdompets project.
+WSGI config for lending_club_loan project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wisdompets.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lending_club_loan.settings")
 
 application = get_wsgi_application()
