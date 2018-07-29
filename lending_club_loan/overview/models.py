@@ -5,7 +5,7 @@ class LoanStats(models.Model):
 	loan_id = models.CharField(max_length=100)
 	title = models.CharField(max_length=100)
 	description = models.TextField()
-	funded_amount = models.IntegerField()
+	funded_amount = models.DecimalField(max_digits=30, decimal_places=2)
 	purpose = models.TextField()
 
 class BrowseNotes(models.Model):
