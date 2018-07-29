@@ -1,9 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import Http404
+from .models import LoanStats
 
-# Create your views here.
 def home(request):
-	return HttpResponse('<p>home view</p>')
+	loans = LoanStats.objects.all()
 
-def loan_detail(request, id):
-	return HttpResponse('<p>loan_detail view with id {}</p>'.format(id))
+	return render(request, 'home.html', {'loans': loans})
+
+
+def loan_detail(request, loan_id):
+	try:
+		loan = LoanStats.objects.get(loan_id=loan_id)
+	except LoanStats.DoesNotExist:
+		raise Http404('Loan not found')
+	return render(request, 'loan_detail.html', {'loan': loan})

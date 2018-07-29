@@ -20,5 +20,5 @@ from overview import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
-    url(r'^overview/?(\d+)/', views.loan_detail, name='loan_detail'),
+    url(r'^overview/(\d+)/$', views.loan_detail, name='loan_detail'),
 ]

@@ -1,0 +1,12 @@
+<div>
+	{%for loan in loans%}
+		<div class='loanid'>
+			<a href="{%url 'loan_detail' loan.loan_id%}">
+				<h3>{{loan.title|capfirst}}</h3>
+			</a>
+			<p>{{loan.funded_amount}}</p>
+			<p>{{loan.purpose}}</p>
+			<p class="hidden">{{loan.description}}</p>
+		</div>
+	{%endfor%}
+</div>
