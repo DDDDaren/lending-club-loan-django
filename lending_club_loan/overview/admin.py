@@ -4,5 +4,6 @@ from django.contrib import admin
 from .models import LoanStats
 
 
+@admin.register(LoanStats)
 class LoanAdmin(admin.ModelAdmin):
-	pass
+	list_display = ['loan_id', 'title', 'funded_amount', 'purpose', 'description']
