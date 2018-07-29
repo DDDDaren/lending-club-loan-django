@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
 <div>
 	<h3>{{loan.loan_id}}</h3>
 	<p>Title: {{loan.title}}</p>
@@ -5,3 +7,4 @@
 	<p>Purpose: {{loan.purpose}}</p>
 	<p>Description: {{loan.description}}</p>
 </div>
+{% endblock %}
